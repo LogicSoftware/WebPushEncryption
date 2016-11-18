@@ -2,7 +2,7 @@
 
 namespace LogicSoftware.WebPushEncryption
 {
-    public class WebEncoder
+    class WebEncoder
     {
         public static byte[] Base64UrlDecode(string val)
         {
