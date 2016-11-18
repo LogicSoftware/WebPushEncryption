@@ -44,7 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EncryptionResultExtensions.cs" />
+    <Compile Include="EncryptionResult.cs" />
+    <Compile Include="Encryptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
