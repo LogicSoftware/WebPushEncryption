@@ -3,7 +3,7 @@ Chrome/Mozilla push notifications payload encryption for .NET
 
 # Installation
 
-LogicSoftware.WebPushEncryption can be installed via the nuget UI (as WebPushEncryption), or via the nuget package manager console:
+LogicSoftware.WebPushEncryption can be installed [via the nuget UI (as WebPushEncryption)](https://www.nuget.org/packages/WebPushEncryption), or via the nuget package manager console:
 
     PM> Install-Package WebPushEncryption
 
