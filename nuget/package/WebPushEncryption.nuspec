@@ -9,7 +9,8 @@
     <description>Chrome/Mozilla push notifications payload encryption for .NET</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>web push chrome mozilla</tags>
+    <projectUrl>https://github.com/LogicSoftware/WebPushEncryption</projectUrl>
+    <tags>Web Push Encryption Chrome Mozilla GCM FCM Notifications RFC5869 Push</tags>
     <dependencies>
       <dependency id="Security.Cryptography" version="1.7.2" />
     </dependencies>
