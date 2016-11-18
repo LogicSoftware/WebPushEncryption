@@ -12,7 +12,16 @@ namespace LogicSoftware.WebPushEncryption
     {
         private static RNGCryptoServiceProvider _randomNumberProvider = new RNGCryptoServiceProvider();
 
-        public static EncryptionResult Encrypt(byte[] userKey, byte[] userSecret, byte[] data
+        public static EncryptionResult Encrypt(string userKey, string userSecret, string payload)
+        {
+            byte[] userKeyBytes = WebEncoder.Base64UrlDecode(userKey);
+            byte[] userSecretBytes = WebEncoder.Base64UrlDecode(userSecret);
+            byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
+
+            return Encrypt(userKeyBytes, userSecretBytes, payloadBytes);
+        }
+
+        public static EncryptionResult Encrypt(byte[] userKey, byte[] userSecret, byte[] payload
             //, ushort padding = 0, bool randomisePadding = false // not implemented yet
             )
         {
@@ -36,7 +45,7 @@ namespace LogicSoftware.WebPushEncryption
             byte[] cek = HKDF(salt, prk, CreateInfoChunk("aesgcm", userKey, serverPublicKey), 16);
             byte[] nonce = HKDF(salt, prk, CreateInfoChunk("nonce", userKey, serverPublicKey), 12);
 
-            var input = AddPaddingToInput(data);
+            var input = AddPaddingToInput(payload);
 
             var encryptedMessage = EncryptAes(nonce, cek, input);
 
