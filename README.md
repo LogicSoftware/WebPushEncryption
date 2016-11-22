@@ -10,7 +10,12 @@ LogicSoftware.WebPushEncryption can be installed [via the nuget UI (as WebPushEn
 # Usage 
 
 ```cs
-var encryptedPayload = LogicSoftware.WebPushEncryption.Encryptor.Encrypt(p256dh, auth, payload);
+
+using LogicSoftware.WebPushEncryption;
+
+//------------------------------------
+
+var encryptedPayload = Encryptor.Encrypt(p256dh, auth, payload);
 
 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, pushEndpoint);
 
